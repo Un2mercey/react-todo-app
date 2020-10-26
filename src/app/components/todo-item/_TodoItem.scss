@@ -1,0 +1,29 @@
+.todo-item {
+    -webkit-box-shadow: $neon-box-shadow;
+    box-shadow: $neon-box-shadow;
+    padding: 1rem;
+    margin: 2rem;
+    font-size: 1.3rem;
+    display: flex;
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 54vw;
+        .title {
+            font-size: 2rem;
+            span.label {
+                margin-left: 1.5rem;
+                color: whitesmoke;
+                text-shadow: $neon-text-shadow;
+            }
+        }
+        .description {
+            font-size: 1.5rem;
+            color: #ff808091;
+        }
+    }
+    .btn-delete {
+        margin: 18px auto;
+        .icon.icon-delete-item { font-size: 1.3rem; }
+    }
+}
