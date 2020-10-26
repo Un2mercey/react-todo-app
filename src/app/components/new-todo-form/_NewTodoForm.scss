@@ -1,0 +1,29 @@
+form.new-todo-form {
+    width: 60vw;
+    margin: 0 auto;
+    padding: 1rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .new-todo-form-input {
+        margin-top: 1rem;
+        color: whitesmoke;
+        font-weight: 300;
+    }
+
+    .button-block {
+        display: flex;
+        margin: 1rem;
+        padding: 1rem 1rem 0 1rem;
+        justify-content: center;
+        button {
+            margin-right: 1rem;
+            &.btn-save { background-color: greenyellow; }
+            &.btn-fetch { background-color: skyblue; }
+            .icon {
+                &.cloud-download-icon { padding-left: 10px; }
+                &.post-add-icon { padding-left: 5px; }
+            }
+        }
+    }
+}
