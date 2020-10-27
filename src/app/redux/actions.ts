@@ -35,23 +35,21 @@ export function changeTodoItemCheckbox(item: ITodoItem, isChecked: boolean): IBa
 }
 
 
-export function fetchTodos() {
-    return async (dispatch: Dispatch<any>) => {
-        dispatch(appLoading(true));
-        await setTimeout(() => {
-            fetch('https://jsonplaceholder.typicode.com/todos?_limit=50')
-                .then((response: Response) => response.json())
-                .then((data: Array<IFetchTodosResponseItem>) => {
-                    _.forEach(_.map(data, (item: IFetchTodosResponseItem): ITodoItem => {
-                        return {
-                            title: item.title,
-                            description: 'Fetched todo from jsonplaceholder',
-                            isDone: item.completed
-                        };
-                    }), (newTodo: ITodoItem) => { dispatch(createTodoItem(newTodo)); });
-                })
-                .catch((error: any) => dispatch(appLoading(false)))
-                .finally(() => dispatch(appLoading(false)));
-        }, 3000);
-    };
-}
+export const fetchTodos = () => async (dispatch: Dispatch<any>) => {
+    dispatch(appLoading(true));
+    await setTimeout(() => {
+        fetch('https://jsonplaceholder.typicode.com/todos?_limit=50')
+            .then((response: Response) => response.json())
+            .then((data: Array<IFetchTodosResponseItem>) => {
+                _.forEach(_.map(data, (item: IFetchTodosResponseItem): ITodoItem => {
+                    return {
+                        title: item.title,
+                        description: 'Fetched todo from jsonplaceholder',
+                        isDone: item.completed
+                    };
+                }), (newTodo: ITodoItem) => { dispatch(createTodoItem(newTodo)); });
+            })
+            .catch((error: any) => dispatch(appLoading(false)))
+            .finally(() => dispatch(appLoading(false)));
+    }, 3000);
+};
