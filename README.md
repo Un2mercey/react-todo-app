@@ -1,25 +1,31 @@
-# TODO React application with redux, typescript, sass
+# TODO React application
 
-<img width="800" height="1000" src="./preview.png">
+### Install NodeJS
+[Official site](https://nodejs.org/)
 
-## Installation
-1. [NodeJS](https://nodejs.org/)
-
-```
+```bash
 node -v
-v12.19.0
+```
+<code>v12.19.0</code>
 
+```bash
 npm -v
-6.14.8
 ```
+<code>6.14.8</code>
 
-2. Dependencies
 
-```
+### Install dependencies
+
+```bash
 npm i
 ```
 
-## Starting
-```
+### Starting
+```bash
 npm start
+```
+
+### Deployment
+```bash
+npm run deploy
 ```
